@@ -1,0 +1,4 @@
+(sym_lib_table
+  (lib (name "CM4IO")(type "KiCad")(uri "C:/Users/speed/Documents/Design/PCB/CM4IO/CM4IO.kicad_sym")(options "")(descr ""))
+  (lib (name "CM4_NAS")(type "KiCad")(uri "${KIPRJMOD}/CM4_NAS.kicad_sym")(options "")(descr ""))
+)

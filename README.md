@@ -1,5 +1,55 @@
-# CM4-NAS
- Raspberry Pi CM4 based NAS solution board
 
-More details coming soon...
-https://www.reddit.com/r/raspberry_pi/comments/jt89dm/compute_module_4_nas_pcb_with_pcie/
+# CM4 NAS Solution
+
+A compact Compute Module 4 daughter board design breaking out a subset of the CM4's interfaces, including its single PCIe lane to accept external SATA controller card.
+This design is based off of the official Raspberry Pi Foundation's CM4 IO board KiCad project files (available on the [IO board official page](https://www.raspberrypi.org/products/compute-module-4-io-board/?resellerType=home)), by removing the unnecessary IO and rearranging the remaining interfaces for a smaller footprint.
+The board could be smaller, but it was designed to be as easy to assemble as possible so components are almost all through-hole, with the exception of the high density CM4 connections, the fan controller (although the pitch is high so it's easy to solder by hand), a buffer, and optional ESD sinks.
+
+Also working on a 3D printed tower style case to complement the board. It will accommodate a 92mm fan, four HDDs, a small OLED screen and of course the board itself with a SATA controller board. The full design will be made available here and on Thingiverse as soon as I have completed it.
+
+[Reddit post here.](https://www.reddit.com/r/raspberry_pi/comments/jt89dm/compute_module_4_nas_pcb_with_pcie/)
+
+
+# Current State
+I sadly can't get my hands on a CM4, so nothing was tested yet. I have ordered and received a first batch of 5 PCBs, as well as all the parts I need to assemble a prototype (see bellow for parts list).
+I am however still waiting on some tooling to do the very fine pitch soldering. More details on assembly bellow.
+
+The current version of the board was not meant to be used with the lite version of the CM4 as it doesn't forward the microSD input of the module, but it retains the necessary IO to program the CM4's eMMC.
+
+This project gained some unexpected visibility thanks to Jeff Geerling's YouTube videos, so I'll make sure to update this repo as I find and solve issues, much like he does on [his repo](https://github.com/geerlingguy/raspberry-pi-pcie-devices/issues), which I highly recommend to help with the software part of the problem.
+Don't hesitate to ask questions in the Discussion tab of this repo.
+
+## Board IO
+### CM4 IO Breakout
+The interfaces the board forward from the CM4 are the following:
+- **PCIe x1 Gen2**: Only worthy note is that because I took the footprint for the slot as it was in the IO board project, I inherited a P/N swat in the TX and RX differential pairs. They did that to improve routing on the official board and I could probably have inverted them back but I wanted to keep as much as I could from the official design, as my understanding of the impacts are fairly limited.
+- **Ethernet**: To reduce the number of components on the board and make assembly easier, a MagJack is used instead of a simple ethernet connector. I had to look this up when I saw it in the IO board design, but a MagJack seems to be simply an RJ45 connector with integrated filters to help with signal integrity. Footprint is specific to the part listed bellow.
+- **Single slave USB**: A USB type A port to plug a keyboard, a flash drive, a hub, or whatever you want to use as a USB slave to the CM4.
+- **Master USB**: USB connection to use the CM4 as slave. You would use this to program the eMMC with you computer. This connection taps into the same single USB bus the CM4 has to offer, but when this is used, the VCC input from the master signals that the CM4 should behave as a slave. Currently the footprint for this is a simple 5 pin header.
+- **HDMI**:  For debugging purposes, I really wanted to have an HDMI output, but I didn't want to solder a fine pitch HDMI female connector, so this is is again just a header (20 pin). The pinout was specifically thought for [this breakout board](https://www.aliexpress.com/item/32904598840.html) I found on AliExpress.
+- **I²C**: This is marked "OLED" on the board because this was the intended use, but you can use this to slave any I²C device to the CM4. Four pin JST connector footprint (fits simple headers too).
+- **One GPIO**: Marked "Temp_sensor" on the board, but can be used for anything. Hooked to GPIO_4 on the CM4. I would recommend using it for a temp sensor near the SATA controller because they can get really hot and control the fan (see bellow) based on that.
+- **Configuration headers**: nRPIBOOT, EEPROM_nWP, AIN1, SYNC_IN, SYNC_OUT, TV_OUT, GLOBAL_EN. The pinout is detailed bellow.
+
+### Other Connections on the Board
+Other than relaying the compute module's IOs, the board adds other connections, mainly for power.
+- **Fan control**: The board expects a dedicated PWM fan controller IC (see part list). Its output is routed to this JST connector (or your typical PWM fan connector) marked "Fan_PWM" on the board.
+- **USB selection headers**: To avoid needing a USB MUX on board, these headers should be used with jumpers to select if you want to use the master or the slave USB.
+- **Power input**: The board expects a 5V input for the CM4, and a 12V input for the PCIe card, both through the same JST connector labeled "PWR_IN".
+- **3V3 buck**: The PCIe card also requires a dedicated 3V3 supply. This can be provided through the "3V3_BUCK" header near the power input. The pinout was made to accommodate [this daughter board](https://www.aliexpress.com/item/32817933017.html?spm=a2g0s.9042311.0.0.27424c4dr779wi) from AliExpress.
+- **HDDs power**: Labeled "SATA_PWR". This is the power rail for the hard drives.
+
+## Assembly
+### Required parts
+*Comming soon*
+### Manufacturing
+*Comming soon*
+
+
+## Diagrams and Pinouts
+*Comming soon*
+
+
+# Next Steps
+
+*Comming soon*

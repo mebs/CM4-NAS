@@ -15,9 +15,13 @@ Also working on a 3D printed tower style case to complement the board. It will a
 
 ##### Table of Contents
 - [Current State](#current-state)
--  [Board IO](#board-io)
-- [Assembly](#assembly)
-- [Diagrams and Pinouts](#diagrams-and-pinouts)
+  * [Board IO](#board-io)
+    + [CM4 IO Breakout](#cm4-io-breakout)
+    + [Other Connections on the Board](#other-connections-on-the-board)
+  * [Assembly](#assembly)
+    + [Required Parts](#required-parts)
+    + [Manufacturing](#manufacturing)
+  * [Diagrams and Pinouts](#diagrams-and-pinouts)
 - [Next Steps](#next-steps)
 
 # Current State
@@ -51,7 +55,7 @@ Other than relaying the compute module's IOs, the board adds other connections, 
 - **HDDs power**: Labeled "SATA_PWR". This is the power rail for the hard drives.
 
 ## Assembly
-### Required parts
+### Required Parts
 I'll do a more detailed breakdown of all the parts as I build this document (resistor values etc.), but it's worth mentioning the main parts. Links to DigiKey Canada are provided.
 - **[High density connectors](https://www.digikey.ca/en/products/detail/hirose-electric-co-ltd/DF40C-100DS-0.4V%2851%29/1969495)**: You will need these to connect the CM4 to the board. They can be very daunting, but I found [this video](https://www.youtube.com/watch?v=eukcrFc18P4) of someone neatly soldering them with a hot air gun. Never did it myself, can't wait to try when I get the hot air gun.
 - **[MagJack](https://www.digikey.ca/en/products/detail/bel-fuse-inc/0826-1G1T-43-F/2107992)**: I made the footprint for this specific one.

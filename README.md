@@ -12,6 +12,8 @@ Also working on a 3D printed tower style case to complement the board. It will a
 
 ![](https://preview.redd.it/12567x1d10z51.jpg?width=3264&format=pjpg&auto=webp&s=f8476466ab5820a5ea29eb13be4bf1354736fcdf)
 
+##### Table of Contents
+[Current State](#CurrentState)
 
 # Current State
 I will update this section as I go.

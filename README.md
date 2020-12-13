@@ -1,7 +1,7 @@
 
 # CM4 NAS Solution
 
-This Compute Module 4 daughter board design exposes a subset of the CM4's interfaces, including its single PCIe lane to accept external an SATA controller card.
+This Compute Module 4 daughter board design exposes a subset of the CM4's interfaces, including its single PCIe lane to accept an external SATA controller card.
 This design is based off of the official Raspberry Pi Foundation's CM4 IO board, the KiCad project is available on the [IO board official page](https://www.raspberrypi.org/products/compute-module-4-io-board/?resellerType=home)). Removed the unnecessary IO and rearranged the remaining interfaces for a smaller footprint.
 
 The board could be smaller, but it was designed to be as easy to assemble as possible, so almost all the components are through-hole with the exception of the high density CM4 connections, the fan controller (although the pitch is high so it's easy to solder by hand), a buffer, and a few ESD sinks.
@@ -27,8 +27,8 @@ Don't hesitate to ask questions in the Discussion tab of this repo.
 ### CM4 IO Breakout
 The interfaces the board forwards from the CM4 are the following:
 - **PCIe x1 Gen2**: Only worthy note is that because I took the footprint for the slot as it was in the IO board project, I inherited a P/N swap in the TX and RX differential pairs. They did that to improve routing on the official board and I could probably have inverted them back but I wanted to keep as much as I could from the official design, as my understanding of the impacts are fairly limited.
-- **Ethernet**: To reduce the number of components on the board and make assembly easier, a MagJack is used instead of a simple ethernet connector. I had to look this up when I saw it in the IO board design, but a MagJack seems to be simply an RJ45 connector with integrated filters to help with signal integrity. Footprint is specific to the part listed bellow.
-- **Single slave USB**: A USB type A port to plug a keyboard, a flash drive, a hub, or whatever you want to use as a USB slave to the CM4.
+- **Ethernet**: To reduce the number of components on the board and make assembly easier, a MagJack is used instead of a simple RJ45 connector. I had to look this up when I saw it in the IO board design, but a MagJack seems to be simply an RJ45 connector with integrated filters to help with signal integrity. Footprint is specific to the part listed bellow.
+- **Single slave USB**: A USB type A port to plug a keyboard, a flash drive, a hub, or whatever you want to use as a USB slave to the CM4. Footprint is not standard so make sure it fits yours if you manufacture the PCB.
 - **Master USB**: USB connection to use the CM4 as slave. You would use this to program the eMMC with you computer. This connection taps into the same single USB bus the CM4 has to offer, but when this is used, the VCC input from the master signals that the CM4 should behave as a slave. Currently the footprint for this is a simple 5 pin header.
 - **HDMI**:  For debugging purposes, I really wanted to have an HDMI output, but I didn't want to solder a fine pitch HDMI female connector, so this is is again just a header (20 pin). The pinout was specifically thought for [this breakout board](https://www.aliexpress.com/item/32904598840.html) I found on AliExpress.
 - **I²C**: This is marked "OLED" on the board because this was the intended use, but you can use this to slave any I²C device to the CM4. Four pin JST connector footprint (fits simple headers too).

@@ -1,11 +1,12 @@
 
 # CM4 NAS Solution
 
-A compact Compute Module 4 daughter board design breaking out a subset of the CM4's interfaces, including its single PCIe lane to accept external SATA controller card.
-This design is based off of the official Raspberry Pi Foundation's CM4 IO board KiCad project files (available on the [IO board official page](https://www.raspberrypi.org/products/compute-module-4-io-board/?resellerType=home)), by removing the unnecessary IO and rearranging the remaining interfaces for a smaller footprint.
-The board could be smaller, but it was designed to be as easy to assemble as possible so components are almost all through-hole, with the exception of the high density CM4 connections, the fan controller (although the pitch is high so it's easy to solder by hand), a buffer, and optional ESD sinks.
+This Compute Module 4 daughter board design exposes a subset of the CM4's interfaces, including its single PCIe lane to accept external an SATA controller card.
+This design is based off of the official Raspberry Pi Foundation's CM4 IO board, the KiCad project is available on the [IO board official page](https://www.raspberrypi.org/products/compute-module-4-io-board/?resellerType=home)). Removed the unnecessary IO and rearranged the remaining interfaces for a smaller footprint.
 
-Also working on a 3D printed tower style case to complement the board. It will accommodate a 92mm fan, four HDDs, a small OLED screen and of course the board itself with a SATA controller board. The full design will be made available here and on Thingiverse as soon as I have completed it.
+The board could be smaller, but it was designed to be as easy to assemble as possible, so almost all the components are through-hole with the exception of the high density CM4 connections, the fan controller (although the pitch is high so it's easy to solder by hand), a buffer, and a few ESD sinks.
+
+Also working on a 3D printed tower style case to complement the board. It will accommodate a 92mm fan, four HDDs, a small OLED screen and of course the board itself with a SATA controller board. The full design will be made available here and on Thingiverse as soon as I have it completed.
 
 [Reddit post here.](https://www.reddit.com/r/raspberry_pi/comments/jt89dm/compute_module_4_nas_pcb_with_pcie/)
 
@@ -13,18 +14,19 @@ Also working on a 3D printed tower style case to complement the board. It will a
 
 
 # Current State
+I will update this section as I go.
 I sadly can't get my hands on a CM4, so nothing was tested yet. I have ordered and received a first batch of 5 PCBs, as well as all the parts I need to assemble a prototype (see bellow for parts list).
 I am however still waiting on some tooling to do the very fine pitch soldering. More details on assembly bellow.
 
-The current version of the board was not meant to be used with the lite version of the CM4 as it doesn't forward the microSD input of the module, but it retains the necessary IO to program the CM4's eMMC.
+The current version of the board was not meant to be used with the lite version of the CM4 as it doesn't forward the microSD leads of the module, but it retains the necessary IO to program the CM4's eMMC.
 
 This project gained some unexpected visibility thanks to Jeff Geerling's YouTube videos, so I'll make sure to update this repo as I find and solve issues, much like he does on [his repo](https://github.com/geerlingguy/raspberry-pi-pcie-devices/issues), which I highly recommend to help with the software part of the problem.
 Don't hesitate to ask questions in the Discussion tab of this repo.
 
 ## Board IO
 ### CM4 IO Breakout
-The interfaces the board forward from the CM4 are the following:
-- **PCIe x1 Gen2**: Only worthy note is that because I took the footprint for the slot as it was in the IO board project, I inherited a P/N swat in the TX and RX differential pairs. They did that to improve routing on the official board and I could probably have inverted them back but I wanted to keep as much as I could from the official design, as my understanding of the impacts are fairly limited.
+The interfaces the board forwards from the CM4 are the following:
+- **PCIe x1 Gen2**: Only worthy note is that because I took the footprint for the slot as it was in the IO board project, I inherited a P/N swap in the TX and RX differential pairs. They did that to improve routing on the official board and I could probably have inverted them back but I wanted to keep as much as I could from the official design, as my understanding of the impacts are fairly limited.
 - **Ethernet**: To reduce the number of components on the board and make assembly easier, a MagJack is used instead of a simple ethernet connector. I had to look this up when I saw it in the IO board design, but a MagJack seems to be simply an RJ45 connector with integrated filters to help with signal integrity. Footprint is specific to the part listed bellow.
 - **Single slave USB**: A USB type A port to plug a keyboard, a flash drive, a hub, or whatever you want to use as a USB slave to the CM4.
 - **Master USB**: USB connection to use the CM4 as slave. You would use this to program the eMMC with you computer. This connection taps into the same single USB bus the CM4 has to offer, but when this is used, the VCC input from the master signals that the CM4 should behave as a slave. Currently the footprint for this is a simple 5 pin header.

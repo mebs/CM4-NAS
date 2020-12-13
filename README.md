@@ -1,15 +1,13 @@
-
-
 # CM4 NAS Solution
 
 This Compute Module 4 daughter board design exposes a subset of the CM4's interfaces, including its single PCIe lane to accept an external SATA controller card.
-This design is based off of the official Raspberry Pi Foundation's CM4 IO board, the KiCad project is available on the [IO board official page](https://www.raspberrypi.org/products/compute-module-4-io-board/?resellerType=home)). Removed the unnecessary IO and rearranged the remaining interfaces for a smaller footprint.
+This design is based off of the official Raspberry Pi Foundation's CM4 IO board (the KiCad project is available on the [IO board official page](https://www.raspberrypi.org/products/compute-module-4-io-board/?resellerType=home)). Removed the unnecessary IO and rearranged the remaining interfaces for a smaller footprint that would fit in the width of a standard 3.5" hard drive.
 
-The board could be smaller, but it was designed to be as easy to assemble as possible, so almost all the components are through-hole with the exception of the high density CM4 connections, the fan controller (although the pitch is high so it's easy to solder by hand), a buffer, and a few ESD sinks.
+The board could be smaller, but it was designed to be as easy to assemble as possible, so almost all the components are through-hole with the exception of the high density CM4 connections, the fan controller (although the pitch is high so it's easy to solder by hand), a buffer, and a few ESD sinks. Also, all the power management is left to external power supplies.
 
-Also working on a 3D printed tower style case to complement the board. It will accommodate a 92mm fan, four HDDs, a small OLED screen and of course the board itself with a SATA controller board. The full design will be made available here and on Thingiverse as soon as I have it completed.
+Also working on a 3D printed tower style case to complement the board. It will accommodate a 92mm fan, four 3.5" HDDs, a small OLED screen, and of course the board itself with a SATA controller board. The full design will be made available here and on Thingiverse as soon as I have it completed.
 
-[Reddit post here.](https://www.reddit.com/r/raspberry_pi/comments/jt89dm/compute_module_4_nas_pcb_with_pcie/)
+[Original Reddit post here.](https://www.reddit.com/r/raspberry_pi/comments/jt89dm/compute_module_4_nas_pcb_with_pcie/)
 
 ![](https://preview.redd.it/12567x1d10z51.jpg?width=3264&format=pjpg&auto=webp&s=f8476466ab5820a5ea29eb13be4bf1354736fcdf)
 
@@ -19,19 +17,22 @@ Also working on a 3D printed tower style case to complement the board. It will a
     + [CM4 IO Breakout](#cm4-io-breakout)
     + [Other Connections on the Board](#other-connections-on-the-board)
   * [Assembly](#assembly)
-    + [Required Parts](#required-parts)
     + [Manufacturing](#manufacturing)
+    + [Required Parts](#required-parts)
+    + [Building](#building)
   * [Diagrams and Pinouts](#diagrams-and-pinouts)
 - [Next Steps](#next-steps)
 
 # Current State
 I will update this section as I go.
+
 I sadly can't get my hands on a CM4, so nothing was tested yet. I have ordered and received a first batch of 5 PCBs, as well as all the parts I need to assemble a prototype (see bellow for parts list).
 I am however still waiting on some tooling to do the very fine pitch soldering. More details on assembly bellow.
 
 The current version of the board was not meant to be used with the lite version of the CM4 as it doesn't forward the microSD leads of the module, but it retains the necessary IO to program the CM4's eMMC.
 
 This project gained some unexpected visibility thanks to Jeff Geerling's YouTube videos, so I'll make sure to update this repo as I find and solve issues, much like he does on [his repo](https://github.com/geerlingguy/raspberry-pi-pcie-devices/issues), which I highly recommend to help with the software part of the problem.
+
 Don't hesitate to ask questions in the Discussion tab of this repo.
 
 ## Board IO
@@ -55,20 +56,28 @@ Other than relaying the compute module's IOs, the board adds other connections, 
 - **HDDs power**: Labeled "SATA_PWR". This is the power rail for the hard drives.
 
 ## Assembly
+### Manufacturing
+There is a *Fab* folder at the repo's root. This folder contains all the files that you need to order PCBs from a manufacturer. You will find in the folder a Fab.zip archive that is all you need to order from JLC PCB. I'll make sure that the archive is always updated as the design is changed.
+
 ### Required Parts
-I'll do a more detailed breakdown of all the parts as I build this document (resistor values etc.), but it's worth mentioning the main parts. Links to DigiKey Canada are provided.
+I'll do a more detailed breakdown of all the parts as I build this document (resistor values etc.), but it's worth mentioning the parts that have specific footprints and were used to design the board. Links to DigiKey Canada are provided.
 - **[High density connectors](https://www.digikey.ca/en/products/detail/hirose-electric-co-ltd/DF40C-100DS-0.4V%2851%29/1969495)**: You will need these to connect the CM4 to the board. They can be very daunting, but I found [this video](https://www.youtube.com/watch?v=eukcrFc18P4) of someone neatly soldering them with a hot air gun. Never did it myself, can't wait to try when I get the hot air gun.
 - **[MagJack](https://www.digikey.ca/en/products/detail/bel-fuse-inc/0826-1G1T-43-F/2107992)**: I made the footprint for this specific one.
 - **[Fan controller](https://www.digikey.ca/en/products/detail/microchip-technology/EMC2301-1-ACZL-TR/4696431)**: This chip is the exact same one that is on the official IO board and it's controlled by the CM4 through I²C.
 - **[ESD sinks](https://www.digikey.ca/en/products/detail/texas-instruments/TPD4EUSB30DQAR/2503671)**: They are optional in my (very uninformed) opinion. I think they were included on the IO board for POE applications mostly.
 - **[Signal buffer](https://www.digikey.ca/en/products/detail/diodes-incorporated/74LVC1G07SE-7/2356550)**: Used to buffer RUN_PG signal to be able to wake the CM4 from a sleep state. Not needed if you're not planning on doing that.
 
-### Manufacturing
-*Coming soon*
+### Building
+I did not build a prototype yet, but I'll update this section with more details once I do.
+
+To build the board, you will need a soldering iron and a hot air gun (or a reflow oven). I would recommend starting with the Hirose high density connectors as they are without a doubt the hardest part. [This video](https://www.youtube.com/watch?v=eukcrFc18P4) I referred to earlier is a good starting point, it makes for a fine tutorial.
+Once the HD connectors are in place, you can move on to the ESD sinks if you want them. They are very small and can also be challenging, but they're definitely not as critical as the HD connectors.
+
+The rest of the parts should be fairly easy to solder with a standard iron. As is tradition, make sure to start with the lowest components first (resistors, fan controller, etc.) before moving on to the taller ones (headers, PCIe slot, USB connector, MagJack, etc.) since it makes it easier to work around them.
 
 
 ## Diagrams and Pinouts
-*Coming soon*
+*Coming eventually*
 
 
 # Next Steps

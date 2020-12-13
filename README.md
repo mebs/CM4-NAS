@@ -31,7 +31,7 @@ The interfaces the board forward from the CM4 are the following:
 - **HDMI**:  For debugging purposes, I really wanted to have an HDMI output, but I didn't want to solder a fine pitch HDMI female connector, so this is is again just a header (20 pin). The pinout was specifically thought for [this breakout board](https://www.aliexpress.com/item/32904598840.html) I found on AliExpress.
 - **I²C**: This is marked "OLED" on the board because this was the intended use, but you can use this to slave any I²C device to the CM4. Four pin JST connector footprint (fits simple headers too).
 - **One GPIO**: Marked "Temp_sensor" on the board, but can be used for anything. Hooked to GPIO_4 on the CM4. I would recommend using it for a temp sensor near the SATA controller because they can get really hot and control the fan (see bellow) based on that.
-- **Configuration headers**: nRPIBOOT, EEPROM_nWP, AIN1, SYNC_IN, SYNC_OUT, TV_OUT, GLOBAL_EN. The pinout is detailed bellow.
+- **Configuration headers**: nRPIBOOT, EEPROM_nWP, AIN1, SYNC_IN, SYNC_OUT, TV_OUT, GLOBAL_EN, RUN_PG, WL_nDis, BT_nDis. The pinout is detailed bellow.
 
 ### Other Connections on the Board
 Other than relaying the compute module's IOs, the board adds other connections, mainly for power.
@@ -43,15 +43,21 @@ Other than relaying the compute module's IOs, the board adds other connections, 
 
 ## Assembly
 ### Required parts
-*Comming soon*
+I'll do a more detailed breakdown of all the parts as I build this document (resistor values etc.), but it's worth mentioning the main parts. Links to DigiKey Canada are provided.
+- **[High density connectors](https://www.digikey.ca/en/products/detail/hirose-electric-co-ltd/DF40C-100DS-0.4V%2851%29/1969495)**: You will need these to connect the CM4 to the board. They can be very daunting, but I found [this video](https://www.youtube.com/watch?v=eukcrFc18P4) of someone neatly soldering them with a hot air gun. Never did it myself, can't wait to try when I get the hot air gun.
+- **[MagJack](https://www.digikey.ca/en/products/detail/bel-fuse-inc/0826-1G1T-43-F/2107992)**: I made the footprint for this specific one.
+- **[Fan controller](https://www.digikey.ca/en/products/detail/microchip-technology/EMC2301-1-ACZL-TR/4696431)**: This chip is the exact same one that is on the official IO board and it's controlled by the CM4 through I²C.
+- **[ESD sinks](https://www.digikey.ca/en/products/detail/texas-instruments/TPD4EUSB30DQAR/2503671)**: They are optional in my (very uninformed) opinion. I think they were included on the IO board for POE applications mostly.
+- **[Signal buffer](https://www.digikey.ca/en/products/detail/diodes-incorporated/74LVC1G07SE-7/2356550)**: Used to buffer RUN_PG signal to be able to wake the CM4 from a sleep state. Not needed if you're not planning on doing that.
+
 ### Manufacturing
-*Comming soon*
+*Coming soon*
 
 
 ## Diagrams and Pinouts
-*Comming soon*
+*Coming soon*
 
 
 # Next Steps
 
-*Comming soon*
+*Coming soon*

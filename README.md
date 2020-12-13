@@ -1,4 +1,5 @@
 
+
 # CM4 NAS Solution
 
 This Compute Module 4 daughter board design exposes a subset of the CM4's interfaces, including its single PCIe lane to accept an external SATA controller card.
@@ -13,11 +14,11 @@ Also working on a 3D printed tower style case to complement the board. It will a
 ![](https://preview.redd.it/12567x1d10z51.jpg?width=3264&format=pjpg&auto=webp&s=f8476466ab5820a5ea29eb13be4bf1354736fcdf)
 
 ##### Table of Contents
-[Current State](#Current-State)
-[Board IO](#board-io)
-[Assembly](#assembly)
-[Diagrams and Pinouts](#diagrams-and-pinouts)
-[Next Steps](#next-steps)
+- [Current State](#current-state)
+-  [Board IO](#board-io)
+- [Assembly](#assembly)
+- [Diagrams and Pinouts](#diagrams-and-pinouts)
+- [Next Steps](#next-steps)
 
 # Current State
 I will update this section as I go.

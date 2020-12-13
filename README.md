@@ -61,5 +61,6 @@ I'll do a more detailed breakdown of all the parts as I build this document (res
 
 
 # Next Steps
-
-*Coming soon*
+If the current design works, it would already make for a usable product. The board is fairly simple but until I test it with a CM4, a PCIe card and hard drives, with some real power draw I won't know for sure.
+I will open issues and solve them as I go, but even if there are none, there would be a few enhancements the project could benefit from.
+I opened a couple discussions in the [ideas section](https://github.com/mebs/CM4-NAS/discussions?discussions_q=category:Ideas) to discuss enhancements and alternative designs.

@@ -5,7 +5,7 @@ This design is based off of the official Raspberry Pi Foundation's CM4 IO board 
 
 The board could be smaller, but it was designed to be as easy to assemble as possible, so almost all the components are through-hole with the exception of the high density CM4 connections, the fan controller (although the pitch is high so it's easy to solder by hand), a buffer, and a few ESD sinks. Also, all the power management is left to external power supplies.
 
-Also working on a 3D printed tower style case to complement the board. It will accommodate a 92mm fan, four 3.5" HDDs, a small OLED screen, and of course the board itself with a SATA controller board. The full design will be made available here and on Thingiverse as soon as I have it completed.
+Also working on a 3D printed tower style case to complement the board. It will accommodate a 92mm fan, four 3.5" HDDs, a small OLED screen, and of course the board itself with a SATA controller board. The full design will be made available here and on Thingiverse as soon as I have it completed. Discussion here : https://github.com/mebs/CM4-NAS/discussions/6
 
 [Original Reddit post here.](https://www.reddit.com/r/raspberry_pi/comments/jt89dm/compute_module_4_nas_pcb_with_pcie/)
 

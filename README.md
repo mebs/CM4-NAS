@@ -7,6 +7,8 @@ The board could be smaller, but it was designed to be as easy to assemble as pos
 
 Also working on a 3D printed tower style case to complement the board. It will accommodate a 92mm fan, four 3.5" HDDs, a small OLED screen, and of course the board itself with a SATA controller board. The full design will be made available here and on Thingiverse as soon as I have it completed. Discussion here : https://github.com/mebs/CM4-NAS/discussions/6
 
+Feel free to explore the discussion section of this repo to share ideas.
+
 [Original Reddit post here.](https://www.reddit.com/r/raspberry_pi/comments/jt89dm/compute_module_4_nas_pcb_with_pcie/)
 
 ![](https://preview.redd.it/12567x1d10z51.jpg?width=3264&format=pjpg&auto=webp&s=f8476466ab5820a5ea29eb13be4bf1354736fcdf)

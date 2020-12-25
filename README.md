@@ -70,10 +70,17 @@ I'll do a more detailed breakdown of all the parts as I build this document (res
 - **[Signal buffer](https://www.digikey.ca/en/products/detail/diodes-incorporated/74LVC1G07SE-7/2356550)**: Used to buffer RUN_PG signal to be able to wake the CM4 from a sleep state. Not needed if you're not planning on doing that.
 
 ### Building
-I did not build a prototype yet, but I'll update this section with more details once I do.
-
 To build the board, you will need a soldering iron and a hot air gun (or a reflow oven). I would recommend starting with the Hirose high density connectors as they are without a doubt the hardest part. [This video](https://www.youtube.com/watch?v=eukcrFc18P4) I referred to earlier is a good starting point, it makes for a fine tutorial.
-Once the HD connectors are in place, you can move on to the ESD sinks if you want them. They are very small and can also be challenging, but they're definitely not as critical as the HD connectors.
+It only took a couple tries before I could get a decent result (image from microscope at around 50-60x):
+
+![](https://user-images.githubusercontent.com/2614134/103139543-5ab38b00-46ab-11eb-81e4-08bcccfd27b5.jpg)
+
+
+Once the HD connectors are in place, you can move on to the ESD sinks. They are very small and can also be daunting, but soldering them turned out to be easier than expected.
+The trick is to put as little solder paste as possible and the chips will be naturally pulled in place by the solder's surface tension.
+
+![](https://user-images.githubusercontent.com/2614134/103139571-94849180-46ab-11eb-9140-62274b9e4ab9.jpg)
+
 
 The rest of the parts should be fairly easy to solder with a standard iron. As is tradition, make sure to start with the lowest components first (resistors, fan controller, etc.) before moving on to the taller ones (headers, PCIe slot, USB connector, MagJack, etc.) since it makes it easier to work around them.
 

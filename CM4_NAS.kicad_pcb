@@ -2659,7 +2659,7 @@
   (gr_text "Fan_PWM\n" (at 112.268 133.096) (layer "F.SilkS") (tstamp 40216a67-aeeb-4d23-9236-41ed086bc742)
     (effects (font (size 1 1) (thickness 0.15)))
   )
-  (gr_text "RPi CM4 NAS\nrev1" (at 96.51 73.89) (layer "F.SilkS") (tstamp 4c187fc6-7055-4576-b37b-28c2e797dc11)
+  (gr_text "RPi CM4 NAS\nrev1.1" (at 96.51 73.89) (layer "F.SilkS") (tstamp 4c187fc6-7055-4576-b37b-28c2e797dc11)
     (effects (font (size 2 2) (thickness 0.3)) (justify left))
   )
   (gr_text "3V3_BUCK" (at 111.03 123.26 90) (layer "F.SilkS") (tstamp 59ac4508-5731-47ec-b243-e67c24af767b)

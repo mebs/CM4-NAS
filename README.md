@@ -24,6 +24,7 @@ Feel free to explore the discussion section of this repo to share ideas.
     + [Building](#building)
   * [Diagrams and Pinouts](#diagrams-and-pinouts)
 - [Next Steps](#next-steps)
+- [Revision History](#revision-history)
 
 # Current State
 I will update this section as I go.
@@ -93,3 +94,9 @@ The rest of the parts should be fairly easy to solder with a standard iron. As i
 If the current design works, it would already make for a usable product. The board is fairly simple but until I test it with a CM4, a PCIe card and hard drives, with some real power draw I won't know for sure.
 I will open issues and solve them as I go, but even if there are none, there would be a few enhancements the project could benefit from.
 I opened a couple discussions in the [ideas section](https://github.com/mebs/CM4-NAS/discussions?discussions_q=category:Ideas) to discuss enhancements and alternative designs.
+
+
+# Revision History
+- **1**: Initial version
+- **1.1**: Fixed wrong footprint for fan controller
+- **1.2**: Changed the USB select headers for a simpler solution with a single jumper

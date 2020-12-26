@@ -401,15 +401,12 @@
         "microvia_drill": 0.1,
         "name": "CM4_dif_90",
         "nets": [
-          "/Master_USB2_P",
           "/PCIE_CLK_N",
           "/PCIE_CLK_P",
           "/PCIE_RX_N",
           "/PCIE_RX_P",
           "/PCIE_TX_N",
           "/PCIE_TX_P",
-          "/Slave_MicroUSB_N",
-          "/Slave_MicroUSB_P",
           "/USB2_N",
           "/USB2_P"
         ],
@@ -467,7 +464,7 @@
   },
   "sheets": [
     [
-      "9510fee1-505c-4624-ae42-e957f9fb7b9d",
+      "4b6adeb9-e044-4941-b0c3-ac73020d04a7",
       ""
     ]
   ],

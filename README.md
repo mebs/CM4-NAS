@@ -100,3 +100,4 @@ I opened a couple discussions in the [ideas section](https://github.com/mebs/CM4
 - **1**: Initial version
 - **1.1**: Fixed wrong footprint for fan controller
 - **1.2**: Changed the USB select headers for a simpler solution with a single jumper
+- **1.3**: Replaced the HDMI header by a full size HDMI female connector, exposed 9 GPIOs, inverted polarity back for PCIe Tx/Rx signals and added a power LED.

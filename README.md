@@ -11,7 +11,7 @@ Feel free to explore the discussion section of this repo to share ideas.
 
 [Original Reddit post here.](https://www.reddit.com/r/raspberry_pi/comments/jt89dm/compute_module_4_nas_pcb_with_pcie/)
 
-![](https://preview.redd.it/12567x1d10z51.jpg?width=3264&format=pjpg&auto=webp&s=f8476466ab5820a5ea29eb13be4bf1354736fcdf)
+![](https://user-images.githubusercontent.com/2614134/103185260-91df9300-4889-11eb-80b4-4a02d1f3b895.png)
 
 ##### Table of Contents
 - [Current State](#current-state)

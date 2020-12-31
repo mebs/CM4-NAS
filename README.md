@@ -3,7 +3,7 @@
 This Compute Module 4 daughter board design exposes a subset of the CM4's interfaces, including its single PCIe lane to accept an external SATA controller card.
 This design is based off of the official Raspberry Pi Foundation's CM4 IO board (the KiCad project is available on the [IO board official page](https://www.raspberrypi.org/products/compute-module-4-io-board/?resellerType=home)). Removed the unnecessary IO and rearranged the remaining interfaces for a smaller footprint that would fit in the width of a standard 3.5" hard drive.
 
-The board could be smaller, but it was designed to be as easy to assemble as possible, so almost all the components are through-hole with the exception of the high density CM4 connections, the fan controller (although the pitch is high so it's easy to solder by hand), a buffer, and a few ESD sinks. Also, all the power management is left to external power supplies.
+The board was intentionally kept simple to limit mistakes as this is my first attempt at designing a PCB and I have no background in electronics, so all the power management is left to external power supplies. It's important to use good quality regulated power supplies with this board.
 
 Also working on a 3D printed tower style case to complement the board. It will accommodate a 92mm fan, four 3.5" HDDs, a small OLED screen, and of course the board itself with a SATA controller board. The full design will be made available here and on Thingiverse as soon as I have it completed. Discussion here : https://github.com/mebs/CM4-NAS/discussions/6
 

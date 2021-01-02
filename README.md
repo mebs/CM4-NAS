@@ -29,19 +29,18 @@ Feel free to explore the discussion section of this repo to share ideas.
 # Current State
 I will update this section as I go.
 
-I sadly can't get my hands on a CM4, so nothing was tested yet. I have ordered and received a first batch of 5 PCBs, as well as all the parts I need to assemble a prototype (see bellow for parts list).
-I am however still waiting on some tooling to do the very fine pitch soldering. More details on assembly bellow.
+I sadly can't get my hands on a CM4, so nothing was tested yet. I have reveived everything I needed to assemble a first prototype, but realized a footprint was wrong (I double checked and I inherited the mistake from the CM4IO board schematics for some reason, but their PCB doesn't reflect it). I fixed the issue, made several other improvements to the board and ordered the latest revision from JLC PCB. I still took the opportunity to use the old boards as training dummies to solder the high density connectors and it turned out to be very doable.
 
 The current version of the board was not meant to be used with the lite version of the CM4 as it doesn't forward the microSD leads of the module, but it retains the necessary IO to program the CM4's eMMC.
 
-This project gained some unexpected visibility thanks to Jeff Geerling's YouTube videos, so I'll make sure to update this repo as I find and solve issues, much like he does on [his repo](https://github.com/geerlingguy/raspberry-pi-pcie-devices/issues), which I highly recommend to help with the software part of the problem.
+I'll make sure to update this repo as I find and solve issues. For the software part of this project, I highly recommend [Jeff Geerling's repo](https://github.com/geerlingguy/raspberry-pi-pcie-devices/issues), where he documented similar endeavors.
 
 Don't hesitate to ask questions in the Discussion tab of this repo.
 
 ## Board IO
 ### CM4 IO Breakout
 The interfaces the board forwards from the CM4 are the following:
-- **PCIe x1 Gen2**: Only worthy note is that because I took the footprint for the slot as it was in the IO board project, I inherited a P/N swap in the TX and RX differential pairs. They did that to improve routing on the official board and I could probably have inverted them back but I wanted to keep as much as I could from the official design, as my understanding of the impacts are fairly limited.
+- **PCIe x1 Gen2**: Good old PCIe 2.0, nothing special about it... if not that it's on a Raspberry Pi.
 - **Ethernet**: To reduce the number of components on the board and make assembly easier, a MagJack is used instead of a simple RJ45 connector. I had to look this up when I saw it in the IO board design, but a MagJack seems to be simply an RJ45 connector with integrated filters to help with signal integrity. Footprint is specific to the part listed bellow.
 - **Single master/slave USB, selected with jumper**: A USB type A port to plug a keyboard, a flash drive, a hub, or whatever you want to use as a USB slave to the CM4. Footprint is not standard so make sure it fits yours if you manufacture the PCB. Can also be used in slave mode (CM4 as slave). You would use this to program the eMMC with you computer. This connection taps into the same single USB bus the CM4 has to offer, but when this is used, the VCC input from the master signals that the CM4 should behave as a slave. Currently the footprint for this is a simple 5 pin header.
 - **Full size HDMI**:  Mostly for debugging purposes, hooked to the HDMI0 output of the CM4.

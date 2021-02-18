@@ -62,7 +62,7 @@ There is a *Fab* folder at the repo's root. This folder contains all the files t
 
 ### Required Parts
 Other than the standard caps and resistors, here are the components you will need if you want to assemble the board:
-- **High density connectors** ([digikey](https://www.digikey.ca/en/products/detail/hirose-electric-co-ltd/DF40C-100DS-0.4V%2851%29/1969495),[LCSC](https://lcsc.com/product-detail/Mezzanine-Connectors-Board-to-Board_HRS-Hirose-DF40C-100DS-0-4V-51_C597931.html)): You will need these to connect the CM4 to the board. They can be very daunting, but I found [this video](https://www.youtube.com/watch?v=eukcrFc18P4) of someone neatly soldering them with a hot air gun. Never did it myself, can't wait to try when I get the hot air gun.
+- **High density connectors** ([digikey](https://www.digikey.ca/en/products/detail/hirose-electric-co-ltd/DF40C-100DS-0.4V%2851%29/1969495), [LCSC](https://lcsc.com/product-detail/Mezzanine-Connectors-Board-to-Board_HRS-Hirose-DF40C-100DS-0-4V-51_C597931.html)): You will need these to connect the CM4 to the board. They can be very daunting, but I found [this video](https://www.youtube.com/watch?v=eukcrFc18P4) of someone neatly soldering them with a hot air gun. Never did it myself, can't wait to try when I get the hot air gun.
 - **MagJack** ([digikey](https://www.digikey.ca/en/products/detail/bel-fuse-inc/0826-1G1T-43-F/2107992)): I made the footprint for this specific one. It's expensive and I should have looked on LCSC before ordering.
 - **Fan controller** ([digikey](https://www.digikey.ca/en/products/detail/microchip-technology/EMC2301-1-ACZL-TR/4696431), [LCSC](https://lcsc.com/product-detail/_MICROCHIP_EMC2301-1-ACZL-TR_EMC2301-1-ACZL-TR_C148036.html)): This chip is the exact same one that is on the official IO board and it's controlled by the CM4 through I²C.
 - **ESD sinks** ([digikey](https://www.digikey.ca/en/products/detail/texas-instruments/TPD4EUSB30DQAR/2503671), [LCSC](https://lcsc.com/product-detail/Diodes-ESD_Texas-Instruments-TPD4EUSB30DQAR_C90627.html)): They are optional in my (very uninformed) opinion. I think they were included on the IO board for POE applications mostly.
@@ -88,6 +88,7 @@ The rest of the parts should be fairly easy to solder with a standard iron.
 # Next Steps
 So far the board seems to work fine. Once I'm done with testing and configuration, if I don't find issues, I will probably stop putting time on this project (unless there is demand).
 Still, there would be a few enhancements the project could benefit from and any contribution to the project is more than welcome!
+
 I opened a couple discussions in the [ideas section](https://github.com/mebs/CM4-NAS/discussions?discussions_q=category:Ideas) to discuss enhancements and alternative designs.
 
 

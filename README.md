@@ -1,11 +1,11 @@
 # CM4 NAS Solution
 
-This Compute Module 4 daughter board design exposes a subset of the CM4's interfaces, including its single PCIe lane to accept an external SATA controller card.
-This design is based off of the official Raspberry Pi Foundation's CM4 IO board (the KiCad project is available on the [IO board official page](https://www.raspberrypi.org/products/compute-module-4-io-board/?resellerType=home)). Removed the unnecessary IO and rearranged the remaining interfaces for a smaller footprint that would fit in the width of a standard 3.5" hard drive.
+This Compute Module 4 carrier board design exposes a subset of the CM4's interfaces, including its single PCIe x2 lane to accept an external SATA controller card.
+This design is based off of the official Raspberry Pi Foundation's CM4 IO board (the KiCad project is available on the [IO board official page](https://www.raspberrypi.org/products/compute-module-4-io-board/?resellerType=home)). Removed the IO that was less relevant for a NAS and rearranged the remaining interfaces for a smaller footprint that would fit within the width of a standard 3.5" hard drive.
 
-The board was intentionally kept simple to limit mistakes as this is my first attempt at designing a PCB and I have no background in electronics, so all the power management is left to external power supplies. It's important to use good quality regulated power supplies with this board.
+The board was intentionally kept simple to limit mistakes as this is my first ever attempt at designing a PCB and I have no background in electronics, so all the power management is left to external power supplies and buck converters. It's important to use good quality regulated power supplies with this board as it offers no protection other than what is built into the CM4.
 
-Also working on a 3D printed tower style case to complement the board. It will accommodate a 92mm fan, four 3.5" HDDs, a small OLED screen, and of course the board itself with a SATA controller board. The full design will be made available here and on Thingiverse as soon as I have it completed. Discussion here : https://github.com/mebs/CM4-NAS/discussions/6
+Also working on a 3D printed tower style case to complement the board. It will accommodate a 92mm fan, four 3.5" HDDs, a small OLED screen, and of course the board itself with a SATA controller board. The full design will be made available here and on Thingiverse when I eventually have it completed. Discussion here : https://github.com/mebs/CM4-NAS/discussions/6
 
 Feel free to explore the discussion section of this repo to share ideas.
 
@@ -22,14 +22,13 @@ Feel free to explore the discussion section of this repo to share ideas.
     + [Manufacturing](#manufacturing)
     + [Required Parts](#required-parts)
     + [Building](#building)
-  * [Diagrams and Pinouts](#diagrams-and-pinouts)
 - [Next Steps](#next-steps)
 - [Revision History](#revision-history)
 
 # Current State
 I will update this section as I go.
 
-I sadly can't get my hands on a CM4, so nothing was tested yet. I have reveived everything I needed to assemble a first prototype, but realized a footprint was wrong (I double checked and I inherited the mistake from the CM4IO board schematics for some reason, but their PCB doesn't reflect it). I fixed the issue, made several other improvements to the board and ordered the latest revision from JLC PCB. I still took the opportunity to use the old boards as training dummies to solder the high density connectors and it turned out to be very doable.
+I finally got a CM4 and was able to test the board. Everything works fine so far.
 
 The current version of the board was not meant to be used with the lite version of the CM4 as it doesn't forward the microSD leads of the module, but it retains the necessary IO to program the CM4's eMMC.
 
@@ -62,12 +61,13 @@ Other than relaying the compute module's IOs, the board adds other connections, 
 There is a *Fab* folder at the repo's root. This folder contains all the files that you need to order PCBs from a manufacturer. You will find in the folder a Fab.zip archive that is all you need to order from JLC PCB. I'll make sure that the archive is always updated as the design is changed.
 
 ### Required Parts
-I'll do a more detailed breakdown of all the parts as I build this document (resistor values etc.), but it's worth mentioning the parts that have specific footprints and were used to design the board. Links to DigiKey Canada are provided.
-- **[High density connectors](https://www.digikey.ca/en/products/detail/hirose-electric-co-ltd/DF40C-100DS-0.4V%2851%29/1969495)**: You will need these to connect the CM4 to the board. They can be very daunting, but I found [this video](https://www.youtube.com/watch?v=eukcrFc18P4) of someone neatly soldering them with a hot air gun. Never did it myself, can't wait to try when I get the hot air gun.
-- **[MagJack](https://www.digikey.ca/en/products/detail/bel-fuse-inc/0826-1G1T-43-F/2107992)**: I made the footprint for this specific one.
-- **[Fan controller](https://www.digikey.ca/en/products/detail/microchip-technology/EMC2301-1-ACZL-TR/4696431)**: This chip is the exact same one that is on the official IO board and it's controlled by the CM4 through I²C.
-- **[ESD sinks](https://www.digikey.ca/en/products/detail/texas-instruments/TPD4EUSB30DQAR/2503671)**: They are optional in my (very uninformed) opinion. I think they were included on the IO board for POE applications mostly.
-- **[Signal buffer](https://www.digikey.ca/en/products/detail/diodes-incorporated/74LVC1G07SE-7/2356550)**: Used to buffer RUN_PG signal to be able to wake the CM4 from a sleep state. Not needed if you're not planning on doing that.
+Other than the standard caps and resistors, here are the components you will need if you want to assemble the board:
+- **High density connectors** ([digikey](https://www.digikey.ca/en/products/detail/hirose-electric-co-ltd/DF40C-100DS-0.4V%2851%29/1969495),[LCSC](https://lcsc.com/product-detail/Mezzanine-Connectors-Board-to-Board_HRS-Hirose-DF40C-100DS-0-4V-51_C597931.html)): You will need these to connect the CM4 to the board. They can be very daunting, but I found [this video](https://www.youtube.com/watch?v=eukcrFc18P4) of someone neatly soldering them with a hot air gun. Never did it myself, can't wait to try when I get the hot air gun.
+- **MagJack** ([digikey](https://www.digikey.ca/en/products/detail/bel-fuse-inc/0826-1G1T-43-F/2107992)): I made the footprint for this specific one. It's expensive and I should have looked on LCSC before ordering.
+- **Fan controller** ([digikey](https://www.digikey.ca/en/products/detail/microchip-technology/EMC2301-1-ACZL-TR/4696431), [LCSC](https://lcsc.com/product-detail/_MICROCHIP_EMC2301-1-ACZL-TR_EMC2301-1-ACZL-TR_C148036.html)): This chip is the exact same one that is on the official IO board and it's controlled by the CM4 through I²C.
+- **ESD sinks** ([digikey](https://www.digikey.ca/en/products/detail/texas-instruments/TPD4EUSB30DQAR/2503671), [LCSC](https://lcsc.com/product-detail/Diodes-ESD_Texas-Instruments-TPD4EUSB30DQAR_C90627.html)): They are optional in my (very uninformed) opinion. I think they were included on the IO board for POE applications mostly.
+- **Signal buffer** ([digikey](https://www.digikey.ca/en/products/detail/diodes-incorporated/74LVC1G07SE-7/2356550), [LCSC](https://lcsc.com/product-detail/Logic-Buffers-Drivers-Receivers-Transceivers_Diodes-Incorporated-74LVC1G07SE-7_C67531.html)): Used for the power LED and to buffer RUN_PG signal to be able to wake the CM4 from a sleep state. Not needed if you're not planning on doing that.
+- **HDMI connector** ([LCSC](https://lcsc.com/product-detail/Audio-Video-Connectors_SOFNG-HDMI-019S_C111617.html)): Basic full size HDMI connector.
 
 ### Building
 To build the board, you will need a soldering iron and a hot air gun (or a reflow oven). I would recommend starting with the Hirose high density connectors as they are without a doubt the hardest part. [This video](https://www.youtube.com/watch?v=eukcrFc18P4) I referred to earlier is a good starting point, it makes for a fine tutorial.
@@ -77,21 +77,17 @@ It only took a couple tries before I could get a decent result (image from micro
 
 
 Once the HD connectors are in place, you can move on to the ESD sinks. They are very small and can also be daunting, but soldering them turned out to be easier than expected.
-The trick is to put as little solder paste as possible and the chips will be naturally pulled in place by the solder's surface tension.
+The trick is to put as little solder paste as possible and the chips will be naturally be pulled in place by the solder's surface tension.
 
 ![](https://user-images.githubusercontent.com/2614134/103139571-94849180-46ab-11eb-9140-62274b9e4ab9.jpg)
 
 
-The rest of the parts should be fairly easy to solder with a standard iron. As is tradition, make sure to start with the lowest components first (resistors, fan controller, etc.) before moving on to the taller ones (headers, PCIe slot, USB connector, MagJack, etc.) since it makes it easier to work around them.
-
-
-## Diagrams and Pinouts
-*Coming eventually*
+The rest of the parts should be fairly easy to solder with a standard iron.
 
 
 # Next Steps
-If the current design works, it would already make for a usable product. The board is fairly simple but until I test it with a CM4, a PCIe card and hard drives, with some real power draw I won't know for sure.
-I will open issues and solve them as I go, but even if there are none, there would be a few enhancements the project could benefit from.
+So far the board seems to work fine. Once I'm done with testing and configuration, if I don't find issues, I will probably stop putting time on this project (unless there is demand).
+Still, there would be a few enhancements the project could benefit from and any contribution to the project is more than welcome!
 I opened a couple discussions in the [ideas section](https://github.com/mebs/CM4-NAS/discussions?discussions_q=category:Ideas) to discuss enhancements and alternative designs.
 
 

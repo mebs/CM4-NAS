@@ -86,8 +86,10 @@ The rest of the parts should be fairly easy to solder with a standard iron.
 
 
 # Next Steps
-So far the board seems to work fine. Once I'm done with testing and configuration, if I don't find issues, I will probably stop putting time on this project (unless there is demand).
-Still, there would be a few enhancements the project could benefit from and any contribution to the project is more than welcome!
+So far the board seems to work fine.
+I may look into manufacturing if interest in this projects continues to grow. If so, I would probably also redesign the board to fit more needs (better IO layout and mounting would be a good start).
+
+There would be a few enhancements the project could benefit from and any contribution is more than welcome!
 
 I opened a couple discussions in the [ideas section](https://github.com/mebs/CM4-NAS/discussions?discussions_q=category:Ideas) to discuss enhancements and alternative designs.
 

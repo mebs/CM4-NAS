@@ -62,11 +62,11 @@ There is a *Fab* folder at the repo's root. This folder contains all the files t
 
 ### Required Parts
 Other than the standard caps and resistors, here are the components you will need if you want to assemble the board:
-- **High density connectors** ([digikey](https://www.digikey.ca/en/products/detail/hirose-electric-co-ltd/DF40C-100DS-0.4V%2851%29/1969495), [LCSC](https://lcsc.com/product-detail/Mezzanine-Connectors-Board-to-Board_HRS-Hirose-DF40C-100DS-0-4V-51_C597931.html)): You will need these to connect the CM4 to the board. They can be very daunting, but I found [this video](https://www.youtube.com/watch?v=eukcrFc18P4) of someone neatly soldering them with a hot air gun. Never did it myself, can't wait to try when I get the hot air gun.
+- **High density connectors** ([digikey](https://www.digikey.ca/en/products/detail/hirose-electric-co-ltd/DF40C-100DS-0.4V%2851%29/1969495), [LCSC](https://lcsc.com/product-detail/Mezzanine-Connectors-Board-to-Board_HRS-Hirose-DF40C-100DS-0-4V-51_C597931.html)): You will need these to connect the CM4 to the board. They can be very daunting, but I found [this video](https://www.youtube.com/watch?v=eukcrFc18P4) of someone neatly soldering them with a hot air gun. When I finaly got to try it, I was surprise at how doable it was.
 - **MagJack** ([digikey](https://www.digikey.ca/en/products/detail/bel-fuse-inc/0826-1G1T-43-F/2107992)): I made the footprint for this specific one. It's expensive and I should have looked on LCSC before ordering.
 - **Fan controller** ([digikey](https://www.digikey.ca/en/products/detail/microchip-technology/EMC2301-1-ACZL-TR/4696431), [LCSC](https://lcsc.com/product-detail/_MICROCHIP_EMC2301-1-ACZL-TR_EMC2301-1-ACZL-TR_C148036.html)): This chip is the exact same one that is on the official IO board and it's controlled by the CM4 through I²C.
 - **ESD sinks** ([digikey](https://www.digikey.ca/en/products/detail/texas-instruments/TPD4EUSB30DQAR/2503671), [LCSC](https://lcsc.com/product-detail/Diodes-ESD_Texas-Instruments-TPD4EUSB30DQAR_C90627.html)): They are optional in my (very uninformed) opinion. I think they were included on the IO board for POE applications mostly.
-- **Signal buffer** ([digikey](https://www.digikey.ca/en/products/detail/diodes-incorporated/74LVC1G07SE-7/2356550), [LCSC](https://lcsc.com/product-detail/Logic-Buffers-Drivers-Receivers-Transceivers_Diodes-Incorporated-74LVC1G07SE-7_C67531.html)): Used for the power LED and to buffer RUN_PG signal to be able to wake the CM4 from a sleep state. Not needed if you're not planning on doing that.
+- **Signal buffer** ([digikey](https://www.digikey.ca/en/products/detail/diodes-incorporated/74LVC1G07SE-7/2356550), [LCSC](https://lcsc.com/product-detail/Logic-Buffers-Drivers-Receivers-Transceivers_Diodes-Incorporated-74LVC1G07SE-7_C67531.html)): Used for the power LED and to buffer RUN_PG signal to be able to wake the CM4 from a sleep state.
 - **HDMI connector** ([LCSC](https://lcsc.com/product-detail/Audio-Video-Connectors_SOFNG-HDMI-019S_C111617.html)): Basic full size HDMI connector.
 
 ### Building
@@ -77,7 +77,7 @@ It only took a couple tries before I could get a decent result (image from micro
 
 
 Once the HD connectors are in place, you can move on to the ESD sinks. They are very small and can also be daunting, but soldering them turned out to be easier than expected.
-The trick is to put as little solder paste as possible and the chips will be naturally be pulled in place by the solder's surface tension.
+The trick is to put as little solder paste as possible and the chips will naturally be pulled in place by the solder's surface tension.
 
 ![](https://user-images.githubusercontent.com/2614134/103139571-94849180-46ab-11eb-9140-62274b9e4ab9.jpg)
 

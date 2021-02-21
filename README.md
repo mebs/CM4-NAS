@@ -87,7 +87,7 @@ The rest of the parts should be fairly easy to solder with a standard iron.
 
 # Next Steps
 So far the board seems to work fine.
-I may look into manufacturing if interest in this projects continues to grow. If so, I would probably also redesign the board to fit more needs (better IO layout and mounting would be a good start).
+I may look into manufacturing if interest in this projects continues to grow. If so, I would probably also redesign the board to fit more needs (better IO layout and mounting would be a good start) and to reduce manufacturing costs.
 
 There would be a few enhancements the project could benefit from and any contribution is more than welcome!
 

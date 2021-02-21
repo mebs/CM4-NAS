@@ -9,7 +9,7 @@ Also working on a 3D printed tower style case to complement the board. It will a
 
 Feel free to explore the discussion section of this repo to share ideas.
 
-[Original Reddit post here.](https://www.reddit.com/r/raspberry_pi/comments/jt89dm/compute_module_4_nas_pcb_with_pcie/)
+[Latest Reddit post here.](https://www.reddit.com/r/raspberry_pi/comments/lmqyg9/cm4_nas_custom_board_it_works/)
 
 ![](https://user-images.githubusercontent.com/2614134/108195493-d519ed80-70e5-11eb-8293-3591e432dd8e.jpg)
 

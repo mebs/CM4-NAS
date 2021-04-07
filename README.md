@@ -9,7 +9,7 @@ Also made 3D printed enclosure for the final product. Design available here: htt
 
 Feel free to explore the discussion section of this repo to share ideas.
 
-[Latest Reddit post here.](https://www.reddit.com/r/raspberry_pi/comments/lmqyg9/cm4_nas_custom_board_it_works/)
+[Latest Reddit post here.](https://www.reddit.com/r/raspberry_pi/comments/mkbxss/cm4_custom_nas_complete/)
 
 ![](https://user-images.githubusercontent.com/2614134/108195493-d519ed80-70e5-11eb-8293-3591e432dd8e.jpg)
 

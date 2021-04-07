@@ -5,7 +5,7 @@ This design is based off of the official Raspberry Pi Foundation's CM4 IO board 
 
 The board was intentionally kept simple to limit mistakes as this is my first ever attempt at designing a PCB and I have no background in electronics, so all the power management is left to external power supplies and buck converters. It's important to use good quality regulated power supplies with this board as it offers no protection other than what is built into the CM4.
 
-Also working on a 3D printed tower style case to complement the board. It will accommodate a 92mm fan, four 3.5" HDDs, a small OLED screen, and of course the board itself with a SATA controller board. The full design will be made available here and on Thingiverse when I eventually have it completed. Discussion here : https://github.com/mebs/CM4-NAS/discussions/6
+Also made 3D printed enclosure for the final product. Design available here: https://www.thingiverse.com/thing:4820662
 
 Feel free to explore the discussion section of this repo to share ideas.
 

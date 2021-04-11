@@ -26,10 +26,6 @@ Feel free to explore the discussion section of this repo to share ideas.
 - [Revision History](#revision-history)
 
 # Current State
-I will update this section as I go.
-
-I finally got a CM4 and was able to test the board. Everything works fine so far.
-
 The current version of the board was not meant to be used with the lite version of the CM4 as it doesn't forward the microSD leads of the module, but it retains the necessary IO to program the CM4's eMMC.
 
 I'll make sure to update this repo as I find and solve issues. For the software part of this project, I highly recommend [Jeff Geerling's repo](https://github.com/geerlingguy/raspberry-pi-pcie-devices/issues), where he documented similar endeavors.
@@ -87,7 +83,7 @@ The rest of the parts should be fairly easy to solder with a standard iron.
 
 # Next Steps
 So far the board seems to work fine.
-I may look into manufacturing if interest in this projects continues to grow. If so, I would probably also redesign the board to fit more needs (better IO layout and mounting would be a good start) and to reduce manufacturing costs.
+The board could probably use a redesign to fit more needs (better IO layout and mounting would be a good start) and to reduce the BOM and manufacturing costs.
 
 There would be a few enhancements the project could benefit from and any contribution is more than welcome!
 

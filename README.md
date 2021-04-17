@@ -22,6 +22,7 @@ Feel free to explore the discussion section of this repo to share ideas.
     + [Manufacturing](#manufacturing)
     + [Required Parts](#required-parts)
     + [Building](#building)
+- [Pinout](#pinout)
 - [Next Steps](#next-steps)
 - [Revision History](#revision-history)
 
@@ -79,6 +80,9 @@ The trick is to put as little solder paste as possible and the chips will natura
 
 
 The rest of the parts should be fairly easy to solder with a standard iron.
+
+# Pinout
+![](https://user-images.githubusercontent.com/2614134/115098729-9cd53680-9eff-11eb-8c69-481f20cef7db.png)
 
 
 # Next Steps

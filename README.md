@@ -23,7 +23,6 @@ Feel free to explore the discussion section of this repo to share ideas.
     + [Required Parts](#required-parts)
     + [Building](#building)
 - [Pinout](#pinout)
-- [Next Steps](#next-steps)
 - [Revision History](#revision-history)
 
 # Current State
@@ -83,15 +82,6 @@ The rest of the parts should be fairly easy to solder with a standard iron.
 
 # Pinout
 ![](https://user-images.githubusercontent.com/2614134/115098729-9cd53680-9eff-11eb-8c69-481f20cef7db.png)
-
-
-# Next Steps
-So far the board seems to work fine.
-The board could probably use a redesign to fit more needs (better IO layout and mounting would be a good start) and to reduce the BOM and manufacturing costs.
-
-There would be a few enhancements the project could benefit from and any contribution is more than welcome!
-
-I opened a couple discussions in the [ideas section](https://github.com/mebs/CM4-NAS/discussions?discussions_q=category:Ideas) to discuss enhancements and alternative designs.
 
 
 # Revision History

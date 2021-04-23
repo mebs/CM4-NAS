@@ -54,7 +54,7 @@ Other than relaying the compute module's IOs, the board adds other connections, 
 
 # PCB Assembly
 ## Manufacturing
-There is a *Fab* folder at the repo's root. This folder contains all the files that you need to order PCBs from a manufacturer. You will find in the folder a Fab.zip archive that is all you need to order from JLC PCB. I'll make sure that the archive is always updated as the design is changed.
+There is a *Fab* folder at the repo's root. This folder contains all the files that you need to order PCBs from a manufacturer. You will find in the folder a Fab_rev1.4.zip archive that is all you need to order from JLC PCB. This is the latest version and the one I have been running for months now.
 
 ## Required Parts
 Other than the standard caps and resistors, here are the components you will need if you want to assemble the board:

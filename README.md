@@ -16,21 +16,19 @@ Feel free to explore the discussion section of this repo to share ideas.
 ![](https://user-images.githubusercontent.com/2614134/108195493-d519ed80-70e5-11eb-8293-3591e432dd8e.jpg)
 
 ##### Table of Contents
-- [Current State](#current-state)
+- [Software](#software)
 - [Board IO](#board-io)
   * [CM4 IO Breakout](#cm4-io-breakout)
   * [Other Connections on the Board](#other-connections-on-the-board)
-- [PCB Assembly](#assembly)
+- [PCB Assembly](#pcb-assembly)
   * [Manufacturing](#manufacturing)
   * [Required Parts](#required-parts)
   * [Building](#building)
 - [Pinout](#pinout)
 - [Revision History](#revision-history)
 
-# Current State
-The current version of the board was not meant to be used with the lite version of the CM4 as it doesn't forward the microSD leads of the module, but it retains the necessary IO to program the CM4's eMMC.
-
-I'll make sure to update this repo as I find and solve issues. For the software part of this project, I highly recommend [Jeff Geerling's repo](https://github.com/geerlingguy/raspberry-pi-pcie-devices/issues), where he documented similar endeavors.
+# Software
+For the software part of this project, I highly recommend [Jeff Geerling's repo](https://github.com/geerlingguy/raspberry-pi-pcie-devices/issues), where he documented similar endeavors, but you will likely have to recompile the kernel after enabling some modules to be able to use a PCIe SATA controller.
 
 Don't hesitate to ask questions in the Discussion tab of this repo.
 

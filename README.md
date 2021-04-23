@@ -9,6 +9,7 @@ Also made 3D printed enclosure for the final product. Design available here: htt
 
 Feel free to explore the discussion section of this repo to share ideas.
 
+[Hackaday project.](https://hackaday.io/project/179338-cm4-custom-pcie-nas)
 [Latest Reddit post here.](https://www.reddit.com/r/raspberry_pi/comments/mkbxss/cm4_custom_nas_complete/)
 
 ![](https://user-images.githubusercontent.com/2614134/108195493-d519ed80-70e5-11eb-8293-3591e432dd8e.jpg)

@@ -49,7 +49,7 @@ Other than relaying the compute module's IOs, the board adds other connections, 
 - **Fan control**: The board expects a dedicated PWM fan controller IC (see part list). Its output is routed to this JST connector (or your typical PWM fan connector) marked "Fan_PWM" on the board.
 - **USB selection headers**: To avoid needing a USB MUX on board, this header should be used with a jumper to select if you want to use the USB bus as master or as slave.
 - **Power input**: The board expects a 5V input for the CM4, and a 12V input for the PCIe card, both through the same JST connector labeled "PWR_IN".
-- **3V3 buck**: The PCIe card also requires a dedicated 3V3 supply. This can be provided through the "3V3_BUCK" header near the power input. The pinout was made to accommodate [this daughter board](https://www.aliexpress.com/item/32817933017.html?spm=a2g0s.9042311.0.0.27424c4dr779wi) from AliExpress.
+- **3V3 buck**: The PCIe card also requires a dedicated 3V3 supply. This can be provided through the "3V3_BUCK" header near the power input. The pinout was made to accommodate [this daughter board](https://www.aliexpress.com/item/32817933017.html?spm=a2g0s.9042311.0.0.27424c4dr779wi) from AliExpress, but you can use whatever you want for as long as you follow the pinout bellow.
 - **HDDs power**: Labeled "SATA_PWR". This is the power rail for the hard drives.
 
 # PCB Assembly

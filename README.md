@@ -17,13 +17,13 @@ Feel free to explore the discussion section of this repo to share ideas.
 
 ##### Table of Contents
 - [Current State](#current-state)
-  * [Board IO](#board-io)
-    + [CM4 IO Breakout](#cm4-io-breakout)
-    + [Other Connections on the Board](#other-connections-on-the-board)
-  * [Assembly](#assembly)
-    + [Manufacturing](#manufacturing)
-    + [Required Parts](#required-parts)
-    + [Building](#building)
+- [Board IO](#board-io)
+  * [CM4 IO Breakout](#cm4-io-breakout)
+  * [Other Connections on the Board](#other-connections-on-the-board)
+- [PCB Assembly](#assembly)
+  * [Manufacturing](#manufacturing)
+  * [Required Parts](#required-parts)
+  * [Building](#building)
 - [Pinout](#pinout)
 - [Revision History](#revision-history)
 
@@ -34,8 +34,8 @@ I'll make sure to update this repo as I find and solve issues. For the software 
 
 Don't hesitate to ask questions in the Discussion tab of this repo.
 
-## Board IO
-### CM4 IO Breakout
+# Board IO
+## CM4 IO Breakout
 The interfaces the board forwards from the CM4 are the following:
 - **PCIe x1 Gen2**: Good old PCIe 2.0, nothing special about it... if not that it's on a Raspberry Pi.
 - **Ethernet**: To reduce the number of components on the board and make assembly easier, a MagJack is used instead of a simple RJ45 connector. I had to look this up when I saw it in the IO board design, but a MagJack seems to be simply an RJ45 connector with integrated filters to help with signal integrity. Footprint is specific to the part listed bellow.
@@ -46,7 +46,7 @@ The interfaces the board forwards from the CM4 are the following:
 - **9 GPIOs**: General purpose IO header, including Gnd, 3V3 and 5V pins.
 - **Configuration headers**: nRPIBOOT, EEPROM_nWP, AIN1, SYNC_IN, SYNC_OUT, TV_OUT, GLOBAL_EN, RUN_PG, WL_nDis, BT_nDis. The pinout is detailed on the board.
 
-### Other Connections on the Board
+## Other Connections on the Board
 Other than relaying the compute module's IOs, the board adds other connections, mainly for power.
 - **Fan control**: The board expects a dedicated PWM fan controller IC (see part list). Its output is routed to this JST connector (or your typical PWM fan connector) marked "Fan_PWM" on the board.
 - **USB selection headers**: To avoid needing a USB MUX on board, this header should be used with a jumper to select if you want to use the USB bus as master or as slave.
@@ -54,11 +54,11 @@ Other than relaying the compute module's IOs, the board adds other connections, 
 - **3V3 buck**: The PCIe card also requires a dedicated 3V3 supply. This can be provided through the "3V3_BUCK" header near the power input. The pinout was made to accommodate [this daughter board](https://www.aliexpress.com/item/32817933017.html?spm=a2g0s.9042311.0.0.27424c4dr779wi) from AliExpress.
 - **HDDs power**: Labeled "SATA_PWR". This is the power rail for the hard drives.
 
-## Assembly
-### Manufacturing
+# PCB Assembly
+## Manufacturing
 There is a *Fab* folder at the repo's root. This folder contains all the files that you need to order PCBs from a manufacturer. You will find in the folder a Fab.zip archive that is all you need to order from JLC PCB. I'll make sure that the archive is always updated as the design is changed.
 
-### Required Parts
+## Required Parts
 Other than the standard caps and resistors, here are the components you will need if you want to assemble the board:
 - **High density connectors** ([digikey](https://www.digikey.ca/en/products/detail/hirose-electric-co-ltd/DF40C-100DS-0.4V%2851%29/1969495), [LCSC](https://lcsc.com/product-detail/Mezzanine-Connectors-Board-to-Board_HRS-Hirose-DF40C-100DS-0-4V-51_C597931.html)): You will need these to connect the CM4 to the board. They can be very daunting, but I found [this video](https://www.youtube.com/watch?v=eukcrFc18P4) of someone neatly soldering them with a hot air gun. When I finaly got to try it, I was surprise at how doable it was.
 - **MagJack** ([digikey](https://www.digikey.ca/en/products/detail/bel-fuse-inc/0826-1G1T-43-F/2107992)): I made the footprint for this specific one. It's expensive and I should have looked on LCSC before ordering.
@@ -67,7 +67,7 @@ Other than the standard caps and resistors, here are the components you will nee
 - **Signal buffer** ([digikey](https://www.digikey.ca/en/products/detail/diodes-incorporated/74LVC1G07SE-7/2356550), [LCSC](https://lcsc.com/product-detail/Logic-Buffers-Drivers-Receivers-Transceivers_Diodes-Incorporated-74LVC1G07SE-7_C67531.html)): Used for the power LED and to buffer RUN_PG signal to be able to wake the CM4 from a sleep state.
 - **HDMI connector** ([LCSC](https://lcsc.com/product-detail/Audio-Video-Connectors_SOFNG-HDMI-019S_C111617.html)): Basic full size HDMI connector.
 
-### Building
+## Building
 To build the board, you will need a soldering iron and a hot air gun (or a reflow oven). I would recommend starting with the Hirose high density connectors as they are without a doubt the hardest part. [This video](https://www.youtube.com/watch?v=eukcrFc18P4) I referred to earlier is a good starting point, it makes for a fine tutorial.
 It only took a couple tries before I could get a decent result (image from microscope at around 50-60x):
 
